@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2>
+                Resultado: <span class="resultado"></span>
+            </h2>
+            <div>
+                <div>
+                    <div>
+                        <label for="">Valor 1</label>
+                        <input id="valor1" type="number">
+                    </div>
+                    <div>
+                        <label for="">Valor 2</label>
+                        <input id="valor2" type="number">
+                    </div>
+                    <div style="display: flex">
+                        <button id="btn-sumar" type="button">
+                            Sumar
+                        </button>
+                        <button id="btn-restar" type="button">
+                            Restar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const resultText = document.querySelector('.resultado');
+        const firstInput = document.querySelector('#valor1')
+        const secondInput = document.querySelector('#valor2')
+        const sumButton = document.querySelector('#btn-sumar')
+        const subtractButton = document.querySelector('#btn-restar')
+
+
+        sumButton.addEventListener('click', () => {
+
+            let firstValue = parseFloat(firstInput.value)
+            let secondValue = parseFloat(secondInput.value)
+
+            resultText.textContent = `${firstValue + secondValue}`
+
+        })
+
+        subtractButton.addEventListener('click', () => {
+
+            let firstValue = parseFloat(firstInput.value)
+            let secondValue = parseFloat(secondInput.value)
+
+            let resultNumber = firstValue - secondValue
+
+            if (resultNumber < 0) {
+                resultNumber = 0
+            }
+
+            resultText.textContent = `${resultNumber}`
+
+        })
+    </script>
+</body>
+
+</html>
